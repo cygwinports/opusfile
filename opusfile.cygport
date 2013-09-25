@@ -1,0 +1,25 @@
+NAME="opusfile"
+VERSION=0.4
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="High-level Opus decoder API"
+DESCRIPTION="Opusfile provides application developers with a high-level API
+for decoding and seeking in .opus files."
+HOMEPAGE="http://www.opus-codec.org/"
+SRC_URI="https://ftp.mozilla.org/pub/mozilla.org/opus/opusfile-${VERSION}.tar.gz"
+
+PKG_NAMES="libopusfile0 libopusfile-devel libopusfile-doc"
+libopusfile0_CONTENTS="--exclude=html usr/bin/cygopus*-0.dll usr/share/doc/"
+libopusfile_devel_CONTENTS="usr/include/ usr/lib/"
+libopusfile_doc_CATEGORY="Doc"
+libopusfile_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	cd ${B}
+	cygconf
+	cygmake
+}
+
+KEEP_LA_FILES="none"
