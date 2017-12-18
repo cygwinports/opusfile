@@ -1,5 +1,5 @@
 NAME="opusfile"
-VERSION=0.8
+VERSION=0.10
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="High-level Opus decoder API"
